@@ -530,7 +530,7 @@ function Convert_To_eth( val){
                 </div>
                 <div className="info-item flex items-center justify-between">
                   <h1 className="item-lbl text-white">
-                    Emergency Unstaking Penalties:
+                  Early Withdrawal Fee:
                   </h1>
                   <h1 className="item-lbl text-white">10%</h1>
                 </div>

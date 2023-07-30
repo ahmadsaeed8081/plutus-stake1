@@ -43,12 +43,12 @@ const SecondBox = ({
 }) => {
 
   const APRList = [
-    { value: "0", lbl: "365 Days" ,APR: "550%" },
-    { value: "1", lbl: "120 Days"  ,APR: "230%" },
-    { value: "2", lbl: "90 Days"  ,APR: "180%" },
-    { value: "3", lbl: "60 Days"  ,APR: "130%" },
-    { value: "4", lbl: "30 Days" ,APR: "80%"  },
-    { value: "5", lbl: "7 Days"  ,APR: "30%" },
+    { value: "0", lbl: "365 Days" ,APR: "580%" },
+    { value: "1", lbl: "120 Days"  ,APR: "240%" },
+    { value: "2", lbl: "90 Days"  ,APR: "190%" },
+    { value: "3", lbl: "60 Days"  ,APR: "140%" },
+    { value: "4", lbl: "30 Days" ,APR: "90%"  },
+    { value: "5", lbl: "7 Days"  ,APR: "35%" },
 
 
 
@@ -439,7 +439,7 @@ console.log(data?data[3].result:null);
                     className="sub-menu-item"
                     style={{ color:"#2498A3" }}
                   >
-                    Get wPLS/WBTC
+                    Get WPLS/WBTC
                   </a>
               
               </div>
@@ -495,7 +495,7 @@ console.log(data?data[3].result:null);
           {boxNumb !== 2 && <div className="overlay" />}
           <div className="body-top flex items-center justify-between">
             <img src="/images/pls-wbtc.png" className="img" />
-            <h1 className="top-tag">wPLS/WBTC</h1>
+            <h1 className="top-tag">WPLS/WBTC</h1>
           </div>
           <div className="body-meta flex flex-col justify-between h-full">
             <div className="flex flex-col">
@@ -623,7 +623,7 @@ console.log(data?data[3].result:null);
           {boxNumb !== 2 && <div className="overlay" />}
           <div className="body-top flex items-center justify-between">
           <img src="/images/pls-wbtc.png" className="img" />
-            <h1 className="top-tag">wPLS/WBTC</h1>
+            <h1 className="top-tag">WPLS/WBTC</h1>
           </div>
           <div className="body-meta flex flex-col justify-between h-full">
             <div className="flex flex-col">
@@ -727,7 +727,7 @@ console.log(data?data[3].result:null);
           {boxNumb !== 2 && <div className="overlay" />}
           <div className="body-top flex items-center justify-between">
           <img src="/images/pls-wbtc.png" className="img" />
-            <h1 className="top-tag">wPLS/WBTC </h1>
+            <h1 className="top-tag">WPLS/WBTC </h1>
           </div>
           <div className="body-meta flex flex-col justify-between h-full">
             <div className="flex flex-col">

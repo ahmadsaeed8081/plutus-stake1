@@ -57,12 +57,12 @@ const ThirdBox = ({
   const networkId = 80001;
 
   const APRList = [
-    { value: "0", lbl: "365 Days" ,APR: "550%" },
-    { value: "1", lbl: "120 Days"  ,APR: "230%" },
-    { value: "2", lbl: "90 Days"  ,APR: "180%" },
-    { value: "3", lbl: "60 Days"  ,APR: "130%" },
-    { value: "4", lbl: "30 Days" ,APR: "80%"  },
-    { value: "5", lbl: "7 Days"  ,APR: "30%" },
+    { value: "0", lbl: "365 Days" ,APR: "50%" },
+    { value: "1", lbl: "120 Days"  ,APR: "25%" },
+    { value: "2", lbl: "90 Days"  ,APR: "20%" },
+    { value: "3", lbl: "60 Days"  ,APR: "15%" },
+    { value: "4", lbl: "30 Days" ,APR: "10%"  },
+    { value: "5", lbl: "7 Days"  ,APR: "5%" },
 
 
 

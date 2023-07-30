@@ -128,7 +128,7 @@ const FirstBox = ({
     abi: stake1_abi,
     functionName: 'Stake',
     args: [token1[1],stakeAmount*10**18,selectedAPR.value],
-    value: Convert_To_Wei(((stakeAmount)*0.3/100)),
+    // value: Convert_To_Wei(((stakeAmount)*0.3/100)),
     onSuccess(data) {
       // test();
       console.log('Success', data)
@@ -458,7 +458,7 @@ const FirstBox = ({
                     className="sub-menu-item"
                     style={{ color:"#2498A3" }}
                   >
-                    Get Plutus/PRC20
+                    Get PLUTUS/PRC20
                   </a>
               
               </div>
@@ -516,7 +516,7 @@ const FirstBox = ({
           {boxNumb !== 1 && <div className="overlay" />}
           <div className="body-top flex items-center justify-between">
             <img src="/images/PRC20s.png" className="img1" />
-            <h1 className="top-tag">Plutus/PRC20</h1>
+            <h1 className="top-tag">PLUTUS/PRC20</h1>
           </div>
           <div className="body-meta flex flex-col justify-between h-full">
             <div className="flex flex-col">
@@ -710,7 +710,7 @@ const FirstBox = ({
           {boxNumb !== 1 && <div className="overlay" />}
           <div className="body-top flex items-center justify-between">
           <img src="/images/PRC20s.png" className="img1" />
-            <h1 className="top-tag">Plutus/PRC20</h1>
+            <h1 className="top-tag">PLUTUS/PRC20</h1>
           </div>
           <div className="body-meta flex flex-col justify-between h-full">
             <div className="flex flex-col">
@@ -885,7 +885,7 @@ const FirstBox = ({
           {boxNumb !== 1 && <div className="overlay" />}
           <div className="body-top flex items-center justify-between">
           <img src="/images/PRC20s.png" className="img1" />
-            <h1 className="top-tag">Plutus/PRC20</h1>
+            <h1 className="top-tag">PLUTUS/PRC20</h1>
           </div>
           <div className="body-meta flex flex-col justify-between h-full">
             <div className="flex flex-col">

@@ -342,7 +342,7 @@ const Header = () => {
         <div className="right flex items-center justify-end">
           <div className="action flex items-center justify-center">
             <button
-              className="btn-connect button"
+              // className="btn-connect button"
               // onClick={(e) => connectWallet()}
             >
               {/* <button> connect </button> */}

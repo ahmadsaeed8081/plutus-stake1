@@ -1,6 +1,6 @@
-export const stake1_address="0x2b089856dF8380feB51cA6c2554051876b985022";
-export const stake2_address="0x9df3e85F883FCad5C3d62d6d07E7c09f2E779E94";
-export const stake3_address="0x9df3e85F883FCad5C3d62d6d07E7c09f2E779E94";
+export const stake1_address="0x556D1A5Abb7D9bc4F2a5C268AAf746de0F21522e";
+export const stake2_address="0x7BB217CEf0B3C8bA5D1D69185ecbfd1B510de2Eb";
+export const stake3_address="0x7BB217CEf0B3C8bA5D1D69185ecbfd1B510de2Eb";
 export  const Stake2_token_Address="0x33b0E5AB94132AF35F1B174bd28d12bB04FB8Ed8";
 export  const Stake3_token_Address="0x33b0E5AB94132AF35F1B174bd28d12bB04FB8Ed8";
 
@@ -8,9 +8,22 @@ export  const Stake3_token_Address="0x33b0E5AB94132AF35F1B174bd28d12bB04FB8Ed8";
 
 export const stake1_abi=[
 	{
-		"inputs": [],
+		"inputs": [
+			{
+				"internalType": "string",
+				"name": "_pairName",
+				"type": "string"
+			},
+			{
+				"internalType": "address",
+				"name": "_plp_Add",
+				"type": "address"
+			}
+		],
+		"name": "add_allowed_token",
+		"outputs": [],
 		"stateMutability": "nonpayable",
-		"type": "constructor"
+		"type": "function"
 	},
 	{
 		"inputs": [
@@ -38,37 +51,79 @@ export const stake1_abi=[
 				"type": "bool"
 			}
 		],
-		"stateMutability": "payable",
-		"type": "function"
-	},
-	{
-		"inputs": [],
-		"name": "Total_allowed_tokens",
-		"outputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"stateMutability": "view",
+		"stateMutability": "nonpayable",
 		"type": "function"
 	},
 	{
 		"inputs": [
 			{
-				"internalType": "string",
-				"name": "_pairName",
-				"type": "string"
-			},
-			{
 				"internalType": "address",
-				"name": "_plp_Add",
+				"name": "_owner",
 				"type": "address"
 			}
 		],
-		"name": "add_allowed_token",
+		"name": "transferOwnership",
 		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"stateMutability": "nonpayable",
+		"type": "constructor"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "num",
+				"type": "uint256"
+			},
+			{
+				"internalType": "address",
+				"name": "lp_token",
+				"type": "address"
+			}
+		],
+		"name": "unStake",
+		"outputs": [
+			{
+				"internalType": "bool",
+				"name": "success",
+				"type": "bool"
+			}
+		],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "token_Add",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_amount",
+				"type": "uint256"
+			}
+		],
+		"name": "withdrawFunds",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "withdrawReward",
+		"outputs": [
+			{
+				"internalType": "bool",
+				"name": "success",
+				"type": "bool"
+			}
+		],
 		"stateMutability": "nonpayable",
 		"type": "function"
 	},
@@ -143,6 +198,67 @@ export const stake1_abi=[
 			{
 				"internalType": "uint256",
 				"name": "APR",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "get_currTime",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "lp_token",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "invest_no",
+				"type": "uint256"
+			}
+		],
+		"name": "get_perInv_Reward",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "num",
+				"type": "uint256"
+			},
+			{
+				"internalType": "address",
+				"name": "lp_token",
+				"type": "address"
+			}
+		],
+		"name": "get_withdrawnTime",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
 				"type": "uint256"
 			}
 		],
@@ -279,67 +395,6 @@ export const stake1_abi=[
 	},
 	{
 		"inputs": [],
-		"name": "get_currTime",
-		"outputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "lp_token",
-				"type": "address"
-			},
-			{
-				"internalType": "uint256",
-				"name": "invest_no",
-				"type": "uint256"
-			}
-		],
-		"name": "get_perInv_Reward",
-		"outputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "uint256",
-				"name": "num",
-				"type": "uint256"
-			},
-			{
-				"internalType": "address",
-				"name": "lp_token",
-				"type": "address"
-			}
-		],
-		"name": "get_withdrawnTime",
-		"outputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [],
 		"name": "owner",
 		"outputs": [
 			{
@@ -365,14 +420,8 @@ export const stake1_abi=[
 		"type": "function"
 	},
 	{
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "",
-				"type": "address"
-			}
-		],
-		"name": "total_withdrawReward",
+		"inputs": [],
+		"name": "Total_allowed_tokens",
 		"outputs": [
 			{
 				"internalType": "uint256",
@@ -392,6 +441,25 @@ export const stake1_abi=[
 			}
 		],
 		"name": "total_withdraw_reaward",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"name": "total_withdrawReward",
 		"outputs": [
 			{
 				"internalType": "uint256",
@@ -432,43 +500,6 @@ export const stake1_abi=[
 		"inputs": [
 			{
 				"internalType": "address",
-				"name": "_owner",
-				"type": "address"
-			}
-		],
-		"name": "transferOwnership",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "uint256",
-				"name": "num",
-				"type": "uint256"
-			},
-			{
-				"internalType": "address",
-				"name": "lp_token",
-				"type": "address"
-			}
-		],
-		"name": "unStake",
-		"outputs": [
-			{
-				"internalType": "bool",
-				"name": "success",
-				"type": "bool"
-			}
-		],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "address",
 				"name": "",
 				"type": "address"
 			},
@@ -499,45 +530,9 @@ export const stake1_abi=[
 				"internalType": "bool",
 				"name": "investBefore",
 				"type": "bool"
-			},
-			{
-				"internalType": "uint256",
-				"name": "stakeTime",
-				"type": "uint256"
 			}
 		],
 		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "token_Add",
-				"type": "address"
-			},
-			{
-				"internalType": "uint256",
-				"name": "_amount",
-				"type": "uint256"
-			}
-		],
-		"name": "withdrawFunds",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [],
-		"name": "withdrawReward",
-		"outputs": [
-			{
-				"internalType": "bool",
-				"name": "success",
-				"type": "bool"
-			}
-		],
-		"stateMutability": "nonpayable",
 		"type": "function"
 	}
 ];
@@ -587,7 +582,7 @@ export const stake2_3_abi=[
 				"type": "bool"
 			}
 		],
-		"stateMutability": "payable",
+		"stateMutability": "nonpayable",
 		"type": "function"
 	},
 	{

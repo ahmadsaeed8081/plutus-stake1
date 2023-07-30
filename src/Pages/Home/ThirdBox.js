@@ -89,7 +89,6 @@ const ThirdBox = ({
   abi: stake2_3_abi,
   functionName: 'Stake',
   args: [stakeAmount*10**18,selectedAPR.value],
-  value:Convert_To_Wei ((stakeAmount*0.3/100)),
   onSuccess(data) {
     test();
     console.log('Success', data)

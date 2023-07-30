@@ -15,7 +15,7 @@ import ConfirmationPopup from "../../components/confirmationPopup";
 import Web3 from "web3";
 import { useAccount, useDisconnect } from "wagmi";
 import {
-  stake3_address,
+  stake6_address,
   stake2_3_abi,
   token_abi,
   Stake3_token_Address,
@@ -29,7 +29,7 @@ import {
 } from "wagmi";
 
 const stake3_Contract = {
-  address: stake3_address,
+  address: stake6_address,
   abi: stake2_3_abi,
 };
 const stakeTokem_Contract = {
@@ -92,11 +92,10 @@ const ThirdBox = ({
     isSuccess: stakeSuccess,
     write: staking,
   } = useContractWrite({
-    address: stake3_address,
+    address: stake6_address,
     abi: stake2_3_abi,
     functionName: "Stake",
     args: [stakeAmount*10**18,selectedAPR.value],
-    value: Convert_To_Wei((stakeAmount * 0.3) / 100),
     onSuccess(data) {
       test();
       console.log("Success", data);
@@ -107,18 +106,18 @@ const ThirdBox = ({
     address: Stake3_token_Address,
     abi: token_abi,
     functionName: "approve",
-    args: [stake3_address, stakeAmount * 10 ** 18],
+    args: [stake6_address, stakeAmount * 10 ** 18],
   });
 
   const { config: unstakeConfig } = usePrepareContractWrite({
-    address: stake3_address,
+    address: stake6_address,
     abi: stake2_3_abi,
     functionName: "unStake",
     args: [choosed_Unstake_inv],
   });
 
   const { config: claimRewardConfig } = usePrepareContractWrite({
-    address: stake3_address,
+    address: stake6_address,
     abi: stake2_3_abi,
     functionName: "withdrawReward",
   });
@@ -264,7 +263,7 @@ const ThirdBox = ({
     );
 
     const balance = await web3.eth.getBalance(address);
-    const contract = new web3.eth.Contract(stake2_3_abi, stake3_address);
+    const contract = new web3.eth.Contract(stake2_3_abi, stake6_address);
     let curr_time = await contract.methods.get_currTime().call();
     set_currTime(curr_time);
 

@@ -14,6 +14,7 @@ import ConfirmationPopup from "../../components/confirmationPopup";
 import {useNetwork,  useSwitchNetwork } from 'wagmi'
 
 import { useAccount, useDisconnect } from 'wagmi'
+import { publicProvider } from 'wagmi/providers/public'
 
 import Web3 from "web3";
 const stake2_Contract = {
@@ -264,7 +265,8 @@ const FirstBox = ({
 
 
   function Convert_To_eth( val){
-    const web3= new Web3(new Web3.providers.HttpProvider("https://polygon-mumbai.g.alchemy.com/v2/tJeV2dJPtzoWZgLalzn380ynAKIWX9FM"));
+    const web3= new Web3(publicProvider());
+    // const web3= new Web3(new Web3.providers.HttpProvider("https://polygon-mumbai.g.alchemy.com/v2/tJeV2dJPtzoWZgLalzn380ynAKIWX9FM"));
     val= web3.utils.fromWei(val.toString(),"ether");
     return val;
   

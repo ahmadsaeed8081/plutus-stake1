@@ -1,4 +1,4 @@
-export const stake1_address="0x556D1A5Abb7D9bc4F2a5C268AAf746de0F21522e";
+export const stake1_address="0x0E2a9743F92c14F5B47E8E1849553213932F46F3";
 export const stake2_address="0x7BB217CEf0B3C8bA5D1D69185ecbfd1B510de2Eb";
 export const stake3_address="0x7BB217CEf0B3C8bA5D1D69185ecbfd1B510de2Eb";
 export const stake4_address="0x0519201d890934283255806e57b2c8e56b017299"; //WBTC

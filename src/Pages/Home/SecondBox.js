@@ -695,7 +695,7 @@ useEffect(()=>{
             </div>
             {
               selectedAmount?(
-                <button className="btn-stack button" disabled={isLoading_unstake} onClick={(e) =>{selectedAmount && Number(curr_time)>Number(selectedAmount[1])?(setOpen(true)):unstaking()} }>
+                <button className="btn-stack button" disabled={isLoading_unstake} onClick={(e) =>{selectedAmount && Number(curr_time)<Number(selectedAmount[1])?(setOpen(true)):unstaking()} }>
                   {!isLoading_unstake  && !isSuccess_unstake &&<div>Unstake</div>}
                   {isLoading_unstake && !isSuccess_unstake && <div>Loading...</div>}
                   {!isLoading_unstake && isSuccess_unstake && <div>Unstake</div>}

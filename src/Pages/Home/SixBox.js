@@ -689,7 +689,7 @@ const ThirdBox = ({
                 disabled={isLoading_unstake}
                 onClick={(e) => {
                   selectedAmount &&
-                  Number(curr_time) > Number(selectedAmount[1])
+                  Number(curr_time) < Number(selectedAmount[1])
                     ? setOpen(true)
                     : unstaking();
                 }}

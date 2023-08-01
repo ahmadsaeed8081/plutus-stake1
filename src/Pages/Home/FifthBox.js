@@ -549,7 +549,7 @@ const ThirdBox = ({
                         {data
                           ? (Number(data[8].result) / 10 ** 18).toFixed(2)
                           : 0}{" "}
-                        PLP
+                        PLSX
                       </span>
                     </h1>
                   </div>
@@ -564,7 +564,7 @@ const ThirdBox = ({
                       onChange={(e) => setStakedAmount(e.target.value)}
                     />
                     <div className="ib-right flex items-center">
-                      <h1 className="ib-txt">PLP</h1>
+                      <h1 className="ib-txt">PLSX</h1>
                       <button
                         className="ib-btn button"
                         onClick={(e) =>

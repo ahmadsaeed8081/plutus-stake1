@@ -3,7 +3,7 @@ export const stake2_address="0xB73f48347FeC7F0CEfF55d354Ead51E2Fe0B22Be";
 export const stake3_address="0x86151F453a15B23B47d8e007E0ABC79A8ede2772";
 export const stake4_address="0x7bF2fe61749cA15f385CD4c4c1624aa40e06a70a"; //WBTC
 export const stake5_address="0x4891a782Cfb1542B657CD9BDd36cb1759FB08C86"; //PLSX
-export const stake6_address="0xB7E10E1426636fA93ac22761eFf68F14B7a0CC82"; //PLUTUS
+export const stake6_address="0x0dC252C9e176D5044A153686162349607e5443C8"; //PLUTUS
 
 export  const Stake1_token_Address="0x95384953e541Ab1b7Fb11338Fc034B80b4A8fb81";
 export  const Stake2_token_Address="0x95384953e541Ab1b7Fb11338Fc034B80b4A8fb81";

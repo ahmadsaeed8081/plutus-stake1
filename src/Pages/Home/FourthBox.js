@@ -459,7 +459,7 @@ const ThirdBox = ({
         >
           {boxNumb !== 4 && <div className="overlay" />}
           <div className="body-top flex items-center justify-between">
-            <img src="/images/wbtc.png" className="img" />
+            <img src="/images/bitcoin.png" className="img" />
             <h1 className="top-tag">WBTC</h1>
           </div>
           <div className="body-meta flex flex-col justify-between h-full">
@@ -608,7 +608,7 @@ const ThirdBox = ({
         >
           {boxNumb !== 4 && <div className="overlay" />}
           <div className="body-top flex items-center justify-between">
-          <img src="/images/wbtc.png" className="img" />
+          <img src="/images/bitcoin.png" className="img" />
             <h1 className="top-tag">WBTC</h1>
           </div>
           <div className="body-meta flex flex-col justify-between h-full">
@@ -716,7 +716,7 @@ const ThirdBox = ({
         >
           {boxNumb !== 4 && <div className="overlay" />}
           <div className="body-top flex items-center justify-between">
-          <img src="/images/wbtc.png" className="img" />
+          <img src="/images/bitcoin.png" className="img" />
             <h1 className="top-tag">WBTC</h1>
           </div>
           <div className="body-meta flex flex-col justify-between h-full">

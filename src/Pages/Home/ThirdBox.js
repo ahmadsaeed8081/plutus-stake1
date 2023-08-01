@@ -534,9 +534,15 @@ function Convert_To_eth( val){
                 </div>
                 <div className="info-item flex items-center justify-between">
                   <h1 className="item-lbl text-white">
-                  Early Withdrawal Fee:
+                  Platform Fee:
                   </h1>
-                  <h1 className="item-lbl text-white">10%</h1>
+                  <h1 className="item-lbl text-white">{stakeAmount*3/100}</h1>
+                </div>
+                <div className="info-item flex items-center justify-between">
+                  <h1 className="item-lbl text-white">
+                  Net Staked:
+                  </h1>
+                  <h1 className="item-lbl text-white">{stakeAmount-(stakeAmount*3/100)}</h1>
                 </div>
               </div>
               <div className="input-field flex flex-col">

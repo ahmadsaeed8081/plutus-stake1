@@ -49,7 +49,7 @@ const ThirdBox = ({
 
 
   let count=0;
-  const networkId=80001;
+  const networkId=369;
 
   const APRList = [
     { value: "0", lbl: "365 Days" ,APR: "600%" },

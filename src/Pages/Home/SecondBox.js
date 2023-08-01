@@ -73,7 +73,7 @@ const SecondBox = ({
 
   const { address, isConnecting ,isDisconnected} = useAccount()
   let count=0;
-  const networkId=80001;
+  const networkId=369;
 
 
 

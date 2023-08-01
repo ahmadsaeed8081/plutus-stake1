@@ -54,7 +54,7 @@ const ThirdBox = ({
   setToken8,
 }) => {
   let count = 0;
-  const networkId = 80001;
+  const networkId=369;
   const APRList = [
     { value: "0", lbl: "365 Days" ,APR: "25%" },
     { value: "1", lbl: "120 Days"  ,APR: "15%" },

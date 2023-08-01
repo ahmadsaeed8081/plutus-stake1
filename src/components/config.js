@@ -1,13 +1,16 @@
-export const stake1_address="0x0E2a9743F92c14F5B47E8E1849553213932F46F3";
-export const stake2_address="0x7BB217CEf0B3C8bA5D1D69185ecbfd1B510de2Eb";
-export const stake3_address="0x7BB217CEf0B3C8bA5D1D69185ecbfd1B510de2Eb";
-export const stake4_address="0x0519201d890934283255806e57b2c8e56b017299"; //WBTC
-export const stake5_address="0x6e0e6883beFD0bc8E8ea2Fc895429402B4974A4A"; //PLSX
-export const stake6_address="0x47A198188495bcD316f22ab459820d9E9FfAa4d7"; //PLUTUS
+export const stake1_address="0x1CEBc5dA90725C16D108B44CD0D21fF35AFdB513";
+export const stake2_address="0xB7E10E1426636fA93ac22761eFf68F14B7a0CC82";
+export const stake3_address="0xB7E10E1426636fA93ac22761eFf68F14B7a0CC82";
+export const stake4_address="0xB7E10E1426636fA93ac22761eFf68F14B7a0CC82"; //WBTC
+export const stake5_address="0xB7E10E1426636fA93ac22761eFf68F14B7a0CC82"; //PLSX
+export const stake6_address="0xB7E10E1426636fA93ac22761eFf68F14B7a0CC82"; //PLUTUS
 
-export  const Stake2_token_Address="0x33b0E5AB94132AF35F1B174bd28d12bB04FB8Ed8";
-export  const Stake3_token_Address="0x33b0E5AB94132AF35F1B174bd28d12bB04FB8Ed8";
-
+export  const Stake1_token_Address="0x95384953e541Ab1b7Fb11338Fc034B80b4A8fb81";
+export  const Stake2_token_Address="0x95384953e541Ab1b7Fb11338Fc034B80b4A8fb81";
+export  const Stake3_token_Address="0x95384953e541Ab1b7Fb11338Fc034B80b4A8fb81";
+export  const Stake4_token_Address="0x95384953e541Ab1b7Fb11338Fc034B80b4A8fb81";
+export  const Stake5_token_Address="0x95384953e541Ab1b7Fb11338Fc034B80b4A8fb81";
+export  const Stake6_token_Address="0x95384953e541Ab1b7Fb11338Fc034B80b4A8fb81";
 
 
 export const stake1_abi=[

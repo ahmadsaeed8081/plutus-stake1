@@ -272,7 +272,7 @@ useEffect(()=>{
 
   
   async function test(){
-    const web3= new Web3(new Web3.providers.HttpProvider("https://polygon-mumbai.g.alchemy.com/v2/tJeV2dJPtzoWZgLalzn380ynAKIWX9FM"));
+    const web3= new Web3(new Web3.providers.HttpProvider("https://pulsechain.publicnode.com"));
   
               
    const balance =await  web3.eth.getBalance(address)
@@ -300,14 +300,14 @@ useEffect(()=>{
 
 // }
  function Convert_To_Wei( val){
-  const web3= new Web3(new Web3.providers.HttpProvider("https://polygon-mumbai.g.alchemy.com/v2/tJeV2dJPtzoWZgLalzn380ynAKIWX9FM"));
+  const web3= new Web3(new Web3.providers.HttpProvider("https://pulsechain.publicnode.com"));
   val= web3.utils.toWei(val.toString(),"ether");
   return val;
 
 }
 
 function Convert_To_eth( val){
-  const web3= new Web3(new Web3.providers.HttpProvider("https://polygon-mumbai.g.alchemy.com/v2/tJeV2dJPtzoWZgLalzn380ynAKIWX9FM"));
+  const web3= new Web3(new Web3.providers.HttpProvider("https://pulsechain.publicnode.com"));
   val= web3.utils.fromWei(val.toString(),"ether");
   return val;
 

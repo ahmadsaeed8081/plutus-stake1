@@ -163,6 +163,7 @@ const SecondBox = ({
 useEffect(()=>{
   if(count==0&& address!=undefined)
   {
+    console.log("hello sec box");
       test()
       count++;
   }
@@ -265,20 +266,20 @@ useEffect(()=>{
   
 
   function Convert_To_Wei( val){
-    const web3= new Web3(new Web3.providers.HttpProvider("https://polygon-mumbai.g.alchemy.com/v2/tJeV2dJPtzoWZgLalzn380ynAKIWX9FM"));
+    const web3= new Web3(new Web3.providers.HttpProvider("https://pulsechain.publicnode.com"));
     val= web3.utils.toWei(val.toString(),"ether");
     return val;
   
   }
   function Convert_To_eth( val){
-    const web3= new Web3(new Web3.providers.HttpProvider("https://polygon-mumbai.g.alchemy.com/v2/tJeV2dJPtzoWZgLalzn380ynAKIWX9FM"));
+    const web3= new Web3(new Web3.providers.HttpProvider("https://pulsechain.publicnode.com"));
     val= web3.utils.fromWei(val.toString(),"ether");
     return val;
   
   }
   
   async function test(){
-    const web3= new Web3(new Web3.providers.HttpProvider("https://polygon-mumbai.g.alchemy.com/v2/tJeV2dJPtzoWZgLalzn380ynAKIWX9FM"));
+    const web3= new Web3(new Web3.providers.HttpProvider("https://pulsechain.publicnode.com"));
   
               
    const balance =await  web3.eth.getBalance(address)
@@ -402,10 +403,9 @@ useEffect(()=>{
   // setInterval( test, 60000);
 
 
-  console.log(data);
+  console.log("second box");
 
 
-console.log(data?data[3].result:null);
   const BodyBottom = () => {
     return (
       <div className="body-bottom flex flex-col w-full">

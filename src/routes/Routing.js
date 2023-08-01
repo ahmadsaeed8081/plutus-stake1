@@ -6,7 +6,7 @@ import Home from "../Pages/Home";
 import { EthereumClient, w3mConnectors, w3mProvider } from '@web3modal/ethereum'
 import { Web3Modal } from '@web3modal/react'
 import { configureChains, createConfig, WagmiConfig } from 'wagmi'
-import { polygonMumbai} from 'wagmi/chains'
+import { pulsechain} from 'wagmi/chains'
 import { infuraProvider } from 'wagmi/providers/infura'
 import { alchemyProvider } from 'wagmi/providers/alchemy'
 import Web3 from "web3";
@@ -15,10 +15,10 @@ import Web3 from "web3";
 
 const Routing = ({ Component, pageProps }) => {
 
-  const chains = [polygonMumbai]
+  const chains = [pulsechain]
 const projectId = '9dc66ab4d76b28b1a452d5dc0083e466'
 
-const { publicClient } = configureChains(chains, [alchemyProvider({ apiKey: 'tJeV2dJPtzoWZgLalzn380ynAKIWX9FM' })])
+const { publicClient } = configureChains(chains, [w3mProvider({ projectId })])
 const wagmiConfig = createConfig({
   autoConnect: true,
   connectors: w3mConnectors({ projectId, chains }),

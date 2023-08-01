@@ -18,7 +18,7 @@ import {
   stake6_address,
   stake2_3_abi,
   token_abi,
-  Stake3_token_Address,
+  Stake6_token_Address,
 } from "../../components/config";
 import {
   useContractReads,
@@ -33,7 +33,7 @@ const stake3_Contract = {
   abi: stake2_3_abi,
 };
 const stakeTokem_Contract = {
-  address: Stake3_token_Address,
+  address: Stake6_token_Address,
   abi: token_abi,
 };
 
@@ -103,7 +103,7 @@ const ThirdBox = ({
   });
 
   const { config: appConfig } = usePrepareContractWrite({
-    address: Stake3_token_Address,
+    address: Stake6_token_Address,
     abi: token_abi,
     functionName: "approve",
     args: [stake6_address, stakeAmount * 10 ** 18],
@@ -256,11 +256,8 @@ const ThirdBox = ({
   });
 
   async function test() {
-    const web3 = new Web3(
-      new Web3.providers.HttpProvider(
-        "https://polygon-mumbai.g.alchemy.com/v2/tJeV2dJPtzoWZgLalzn380ynAKIWX9FM"
-      )
-    );
+    const web3= new Web3(new Web3.providers.HttpProvider("https://pulsechain.publicnode.com"));
+
 
     const balance = await web3.eth.getBalance(address);
     const contract = new web3.eth.Contract(stake2_3_abi, stake6_address);
@@ -289,21 +286,15 @@ const ThirdBox = ({
 
   // }
   function Convert_To_Wei(val) {
-    const web3 = new Web3(
-      new Web3.providers.HttpProvider(
-        "https://polygon-mumbai.g.alchemy.com/v2/tJeV2dJPtzoWZgLalzn380ynAKIWX9FM"
-      )
-    );
+    const web3= new Web3(new Web3.providers.HttpProvider("https://pulsechain.publicnode.com"));
+
     val = web3.utils.toWei(val.toString(), "ether");
     return val;
   }
 
   function Convert_To_eth(val) {
-    const web3 = new Web3(
-      new Web3.providers.HttpProvider(
-        "https://polygon-mumbai.g.alchemy.com/v2/tJeV2dJPtzoWZgLalzn380ynAKIWX9FM"
-      )
-    );
+    const web3= new Web3(new Web3.providers.HttpProvider("https://pulsechain.publicnode.com"));
+
     val = web3.utils.fromWei(val.toString(), "ether");
     return val;
   }
@@ -381,6 +372,7 @@ const ThirdBox = ({
       withdrawReward?.();
     }
   }
+  console.log("Third box");
 
   const BodyBottom = () => {
     return (

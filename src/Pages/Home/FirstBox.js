@@ -8,8 +8,8 @@ import {
 } from "../../assets/Icons";
 import Modal from "../../components/Modal";
 import ConnectWallet from "../../components/ConnectWallet";
-import { stake1_address,stake1_abi,token_abi,Stake2_token_Address } from "../../components/config";
-import { useContractReads,useContractRead ,useContractWrite, usePrepareContractWrite, useWaitForTransaction } from 'wagmi'
+import { stake1_address,stake1_abi,token_abi,Stake1_token_Address } from "../../components/config";
+import { useContractReads,useContractRead ,useContractWrite, usePrepareContractWrite, useWaitForTransaction, usePublicClient } from 'wagmi'
 import ConfirmationPopup from "../../components/confirmationPopup";
 import {useNetwork,  useSwitchNetwork } from 'wagmi'
 
@@ -21,10 +21,7 @@ const stake2_Contract = {
   address: stake1_address,
   abi: stake1_abi,
 }
-const stakeTokem_Contract = {
-  address: Stake2_token_Address,
-  abi: token_abi,
-}
+
 
 const FirstBox = ({
   headerTabsList,
@@ -87,7 +84,7 @@ const FirstBox = ({
 
   let details=[];
   let count=0;
-  const networkId=80001;
+  const networkId=369;
   // let count1=0;
 
   useEffect(()=>{
@@ -108,7 +105,6 @@ const FirstBox = ({
     abi: token_abi,
     functionName: 'approve',
     args: [stake1_address,stakeAmount*10**18],
-    chainId:80001
   })
 
 
@@ -219,12 +215,7 @@ const FirstBox = ({
         ...stake2_Contract,
         functionName: 'get_currTime',
       },
-      {
-        ...stakeTokem_Contract,
-        functionName: 'balanceOf',
-        args: [address]
-        
-      },
+
       
       
       
@@ -266,22 +257,34 @@ const FirstBox = ({
 
   function Convert_To_eth( val){
     
-    const web3= new Web3(new Web3.providers.HttpProvider("https://polygon-mumbai.g.alchemy.com/v2/tJeV2dJPtzoWZgLalzn380ynAKIWX9FM"));
+    const web3= new Web3(new Web3.providers.HttpProvider("https://pulsechain.publicnode.com"));
     val= web3.utils.fromWei(val.toString(),"ether");
     return val;
   
   }
 
   function Convert_To_Wei( val){
-    const web3= new Web3(new Web3.providers.HttpProvider("https://polygon-mumbai.g.alchemy.com/v2/tJeV2dJPtzoWZgLalzn380ynAKIWX9FM"));
+    const web3= new Web3(new Web3.providers.HttpProvider("https://pulsechain.publicnode.com"));
     val= web3.utils.toWei(val.toString(),"ether");
     return val;
+  
+  }
+  async function test1(){
+    console.log("its pulse chain ");
+
+    const web3= new Web3(new Web3.providers.HttpProvider("https://pulsechain.publicnode.com"));
+  
+              
+   const balance =await  web3.eth.getBalance(address)
+   console.log("its pulse chain "+balance);
   
   }
   
   async function test(){
 
-    const web3= new Web3(new Web3.providers.HttpProvider("https://polygon-mumbai.g.alchemy.com/v2/tJeV2dJPtzoWZgLalzn380ynAKIWX9FM"));
+    // const web3= new Web3(new Web3.providers.HttpProvider("https://pulsechain.publicnode.com"));
+    // test1();
+    const web3= new Web3(new Web3.providers.HttpProvider("https://pulsechain.publicnode.com"));
   
               
   //  const balance =await  web3.eth.getBalance(address)
@@ -353,15 +356,18 @@ const FirstBox = ({
     let fee= (stakeAmount*0.3)/(100)
     fee=fee*10**18;
 
-    if(Number(data[1].result) < Number(fee))
+    if(Number(token1[2]) < Number(fee))
     {
       alert("You dont have enough balance");
       return;
     }
     if(chain.id!=networkId)
     {
+      console.log("object chain");
       stake_switch?.();
     }else{
+      console.log("object chain111");
+
       approval?.()
 
     }
@@ -855,7 +861,7 @@ const FirstBox = ({
             </div>
             {
               slected_pair_inv?(
-                <button className="btn-stack button" disabled={isLoading_unstake} onClick={(e) =>{slected_pair_inv && Number(curr_time)>Number(slected_pair_inv[1])?(setOpen(true)):unstaking()} }>
+                <button className="btn-stack button" disabled={isLoading_unstake} onClick={(e) =>{slected_pair_inv && Number(curr_time)<Number(slected_pair_inv[1])?(setOpen(true)):unstaking()} }>
                   {!isLoading_unstake  && !isSuccess_unstake &&<div>Unstake</div>}
                   {isLoading_unstake && !isSuccess_unstake && <div>Loading...</div>}
                   {!isLoading_unstake && isSuccess_unstake && <div>Unstake</div>}

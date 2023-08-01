@@ -280,6 +280,11 @@ const ThirdBox = ({
     set_investmentList(allInvestments);
     setSelectedAmount(allInvestments[0]);
     set_totalReward(totalReward);
+    if(allInvestments[0])
+    {
+      set_choosed_Unstake_inv(allInvestments[0][3])
+
+    }    
     set_Total_withdraw(Total_withdraw);
   }
   // function Max()

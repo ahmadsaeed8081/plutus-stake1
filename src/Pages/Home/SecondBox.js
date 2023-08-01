@@ -295,6 +295,11 @@ useEffect(()=>{
 
     set_investmentList(allInvestments);
     setSelectedAmount(allInvestments[0]);
+    if(allInvestments[0])
+    {
+      set_choosed_Unstake_inv(allInvestments[0][3])
+
+    }    
     set_totalReward(totalReward);
     set_Total_withdraw(Total_withdraw);
 
@@ -365,7 +370,7 @@ useEffect(()=>{
       unstake?.()
 
     }
-    console.log(data__unstake);
+    // console.log(data__unstake);
     
 
   }

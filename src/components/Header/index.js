@@ -12,7 +12,7 @@ import { Web3Button } from '@web3modal/react'
 import { useWeb3Modal } from '@web3modal/react'
 import Web3Modal from "web3modal";
 
-import { useContractReads ,useContractWrite } from 'wagmi'
+import { useAccount,useContractReads ,useContractWrite } from 'wagmi'
 import Stake from "../Stake";
 // import Web3 from "web3";
 
@@ -31,6 +31,7 @@ const Header = () => {
   const [_address, set_user_address] = useState(null);
   const [_web3, set_web3] = useState(null);
   const { open, close } = useWeb3Modal()
+  const { address, isConnected } = useAccount()
 
 
 
@@ -342,11 +343,13 @@ const Header = () => {
         <div className="right flex items-center justify-end">
           <div className="action flex items-center justify-center">
             <button
-              // className="btn-connect button"
+              className="btn-connect button"
               // onClick={(e) => connectWallet()}
+              onClick={() => open()}
             >
-              {/* <button> connect </button> */}
-              <Web3Button/>
+              {isConnected?address.slice(0,5)+"..."+address.slice(38,42): "Connect Wallet" }
+             
+              {/* <Web3Button/> */}
             </button>
           </div>
         </div>

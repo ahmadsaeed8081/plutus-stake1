@@ -476,7 +476,7 @@ const FirstBox = ({
             <div className="lbl-side"></div>
             <div className="val-side">
             <a
-                    href="https://www.plutus.exchange/whitepaper"
+                    href={"https://scan.pulsechain.com/address/"+stake1_address}
                     target="_blank"
                     className="sub-menu-item"
                     style={{ color:"#2498A3" }}
@@ -529,17 +529,14 @@ const FirstBox = ({
           <div className="body-meta flex flex-col justify-between h-full">
             <div className="flex flex-col">
               <div className="info-list flex flex-col">
-                <div className="info-item flex items-center justify-between">
-                  <h1 className="item-lbl text-white">Lock-up Period:</h1>
-                  <h1 className="item-lbl text-white">30 days</h1>
-                </div>
+
                 <div className="info-item flex items-center justify-between">
                   <h1 className="item-lbl text-white">APR:</h1>
                   <h1 className="item-lbl text-white">{selectedAPR.APR}</h1>
                 </div>
                 <div className="info-item flex items-center justify-between">
                   <h1 className="item-lbl text-white">
-                  Platform Fee:
+                  3% Platform Fee:
                   </h1>
                   <h1 className="item-lbl text-white">{stakeAmount*3/100}</h1>
                 </div>

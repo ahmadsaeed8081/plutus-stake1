@@ -420,8 +420,8 @@ const ThirdBox = ({
             <div className="lbl-side"></div>
             <div className="val-side">
               <a
-                href="https://www.plutus.exchange/whitepaper"
-                target="_blank"
+                    href={"https://scan.pulsechain.com/address/"+stake6_address}
+                    target="_blank"
                 className="sub-menu-item"
                 style={{ color: "#2498A3" }}
               >
@@ -470,17 +470,14 @@ const ThirdBox = ({
           <div className="body-meta flex flex-col justify-between h-full">
             <div className="flex flex-col">
               <div className="info-list flex flex-col">
-                <div className="info-item flex items-center justify-between">
-                  <h1 className="item-lbl text-white">Lock-up Period:</h1>
-                  <h1 className="item-lbl text-white">45 days</h1>
-                </div>
+
                 <div className="info-item flex items-center justify-between">
                   <h1 className="item-lbl text-white">APY:</h1>
                   <h1 className="item-lbl text-white">{selectedAPR.APR}</h1>
                 </div>
                 <div className="info-item flex items-center justify-between">
                   <h1 className="item-lbl text-white">
-                  Platform Fee:
+                  3% Platform Fee:
                   </h1>
                   <h1 className="item-lbl text-white">{stakeAmount*3/100}</h1>
                 </div>
@@ -739,13 +736,13 @@ const ThirdBox = ({
                     {(
                       (Number(Total_withdraw) + Number(totalReward)) /
                       10 ** 18
-                    ).toFixed(2)}
+                    )}
                   </h1>
                 </div>
                 <div className="info-item flex items-center justify-between">
                   <h1 className="item-lbl text-white">Available for claim:</h1>
                   <h1 className="item-lbl text-white">
-                    {(Number(totalReward) / 10 ** 18).toFixed(2)}
+                    {(Number(totalReward) / 10 ** 18)}
                   </h1>
                 </div>
               </div>
@@ -809,7 +806,7 @@ const ThirdBox = ({
                       Earning :{" "}
                       <span className="c-theme">
                         {selectedAmount
-                          ? (selectedAmount[6] / 10 ** 18).toFixed(2)
+                          ? (selectedAmount[6] / 10 ** 18)
                           : 0}
                       </span>
                     </h1>

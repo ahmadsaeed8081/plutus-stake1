@@ -11,7 +11,7 @@ import {
 import ConfirmationPopup from "../../components/confirmationPopup";
 import Web3 from "web3";
 import {useNetwork,  useSwitchNetwork } from 'wagmi'
-
+import moment from "moment";
 import { useAccount, useDisconnect } from 'wagmi'
 import { stake1_address,stake2_address,stake3_address,stake1_abi,stake2_3_abi,token_abi,Stake2_token_Address } from "../../components/config";
 import { useContractReads,useContractRead ,useContractWrite, usePrepareContractWrite, useWaitForTransaction } from 'wagmi'
@@ -265,12 +265,13 @@ useEffect(()=>{
 
   
 
-  function Convert_To_Wei( val){
-    const web3= new Web3(new Web3.providers.HttpProvider("https://pulsechain.publicnode.com"));
-    val= web3.utils.toWei(val.toString(),"ether");
-    return val;
-  
-  }
+  // function find_date( time){
+  //   const now = new Date().now;
+  //   console.log("its tie time"+ time);
+
+  //   const t=moment("20000620", "YYYYMMDD").fromNow();
+  //   console.log("its tie "+t);
+  // }
   function Convert_To_eth( val){
     const web3= new Web3(new Web3.providers.HttpProvider("https://pulsechain.publicnode.com"));
     val= web3.utils.fromWei(val.toString(),"ether");
@@ -693,6 +694,9 @@ useEffect(()=>{
                               <span className="unit-eng flex aic font s14 b4">
                                 {Number(item[0])/10**18}
                               </span>
+                              {/* <span className="unit-eng flex aic font s14 b4">
+                                {find_date(Number(item[1]))}
+                              </span> */}
                             </div>
                           </div>
                         ))}

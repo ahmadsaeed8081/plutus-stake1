@@ -749,7 +749,7 @@ const ThirdBox = ({
                   </h1>
                 </div>
                 <div className="info-item flex items-center justify-between">
-                  <h1 className="item-lbl text-white">Available for claim:</h1>
+                <h1 className="item-lbl text-white">Available to Claim:</h1>
                   <h1 className="item-lbl text-white">
                     {(Number(totalReward) / 10 ** 18)}
                   </h1>

@@ -514,7 +514,7 @@ useEffect(()=>{
               <div className="info-list flex flex-col">
 
                 <div className="info-item flex items-center justify-between">
-                  <h1 className="item-lbl text-white">APY:</h1>
+                  <h1 className="item-lbl text-white">APR:</h1>
                   <h1 className="item-lbl text-white">{selectedAPR.APR}</h1>
                 </div>
                 <div className="info-item flex items-center justify-between">

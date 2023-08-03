@@ -72,8 +72,14 @@ const FirstBox = ({
   const [allowedTokens, set_allowedTokens] = useState([]);
   const [stakeAmount, setStakedAmount] = useState(0);
   const [unstakeDetails, set_unstakeDetails] = useState([]);
+  const [RewardDetails, set_RewardDetails] = useState([]);
+
+  const [slected_pair_rew, set_slected_pair_rew] = useState([[]]);
   const [slected_pair, set_slected_pair] = useState([[]]);
+
   const [slected_pair_inv, set_slected_pair_inv] = useState([]);
+  const [slected_pair_inv_rew, set_slected_pair_inv_rew] = useState([]);
+
   const [totalReward, set_totalReward] = useState(0);
   const [Total_withdraw, set_Total_withdraw] = useState(0);
   const [choosed_Unstake_inv, set_choosed_Unstake_inv] = useState();
@@ -83,6 +89,8 @@ const FirstBox = ({
   const { chain } = useNetwork()
 
   let details=[];
+  let details_rew=[];
+
   let count=0;
   const networkId=369;
   // let count1=0;
@@ -297,9 +305,13 @@ const FirstBox = ({
     for(let i=0;i < allowed_tokens.length;i++)
     {
        let temp  = await contract.methods.getAll_investments(allowed_tokens[i][1].toString()).call({from:address}); 
-   
+       let temp_rew  = await contract.methods.getAll_investments_ForReward(allowed_tokens[i][1].toString()).call({from:address}); 
+
         // unstakeDetails.push(temp);
         details.push(temp? temp :[]);
+        details_rew.push(temp_rew? temp_rew :[]);
+
+        
         console.log("token add "+i +" "+allowed_tokens[i][1]);
         console.log("details  "+i +" " +temp);
 
@@ -307,6 +319,7 @@ const FirstBox = ({
     console.log("test unstake prrr "+ details);
 
     set_unstakeDetails(details)
+    set_RewardDetails(details_rew)
     set_slected_plp_add(allowed_tokens[0][1])
 
     console.log("all alloweed tokens"+ allowed_tokens);
@@ -314,6 +327,10 @@ const FirstBox = ({
     set_slected_pair(details[0])
 
     set_slected_pair_inv(details[0][0])
+
+    set_slected_pair_rew(details_rew[0])
+
+    set_slected_pair_inv_rew(details_rew[0][0])
 
     setToken1(allowed_tokens[0])
     setToken3(allowed_tokens[0])
@@ -958,8 +975,8 @@ const FirstBox = ({
                               setHide3(!hide3);
                               setToken3(item);
 
-                              set_slected_pair(unstakeDetails[index])
-                              set_slected_pair_inv(unstakeDetails[index][0])
+                              set_slected_pair_rew(RewardDetails[index])
+                              set_slected_pair_inv_rew(RewardDetails[index][0])
                             }}
                           >
                             <div className="unit-name flex aic font s14 b4">
@@ -992,7 +1009,7 @@ const FirstBox = ({
                               className="unit-eng flex items-center font s14 b4"
                               placeholder="Plano"
                             >
-                              {slected_pair_inv ? slected_pair_inv[0]/10**18 : ""}
+                              {slected_pair_inv_rew ? slected_pair_inv_rew[0]/10**18 : ""}
                             </span>
                           </div>
                         </div>
@@ -1006,14 +1023,14 @@ const FirstBox = ({
                       className={`block flex aic abs ${hide4 ? "show" : ""}`}
                     >
                       <div className="manue flex aic col anim">
-                        {slected_pair.map((item, index) => (
+                        {slected_pair_rew.map((item, index) => (
                           <div
                             key={index}
                             className="slt flex aic"
                             onClick={(e) => {
                               setHide4(!hide4);
                               setToken4(item);
-                              set_slected_pair_inv(item)
+                              set_slected_pair_inv_rew(item)
 
 
                             }}
@@ -1030,7 +1047,7 @@ const FirstBox = ({
                   </div>
                   <div className="field-hdr flex items-center justify-end">
                     <h1 className="f-tag">
-                    Earning : <span className="c-theme">{slected_pair_inv?(slected_pair_inv[6]/10**18):0}</span>
+                    Earning : <span className="c-theme">{slected_pair_inv_rew?(slected_pair_inv_rew[6]/10**18):0}</span>
                     </h1>
                   </div>
                 </div>

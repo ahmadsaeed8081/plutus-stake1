@@ -64,7 +64,9 @@ const SecondBox = ({
 
   const [stakeAmount, setStakedAmount] = useState(0);
   const [curr_time, set_currTime] = useState(0);
+  const [selectedAmount_forReward, setSelectedAmount_forReward] = useState(null);
 
+  const [All_investments_ForReward, set_All_investments_ForReward] = useState([]);
   const [choosed_Unstake_inv, set_choosed_Unstake_inv] = useState();
   const [allInvestments, set_investmentList] = useState([]);
   const [selectedAmount, setSelectedAmount] = useState(null);
@@ -293,9 +295,14 @@ useEffect(()=>{
 
     let allInvestments = await contract.methods.getAll_investments().call({from: address});
              console.log("bal "+allInvestments);
-
+    let All_investments_ForReward = await contract.methods
+    .getAll_investments_ForReward()
+    .call({ from: address });
+       
     set_investmentList(allInvestments);
     setSelectedAmount(allInvestments[0]);
+    set_All_investments_ForReward(All_investments_ForReward)
+    setSelectedAmount_forReward(All_investments_ForReward[0])
     if(allInvestments[0])
     {
       set_choosed_Unstake_inv(allInvestments[0][3])
@@ -755,7 +762,7 @@ useEffect(()=>{
               <div className="input-form flex flex-col">
                 <div className="input-field flex flex-col">
                   <div className="field-hdr flex items-center justify-between">
-                    <h1 className="f-tag">Previous Investment:</h1>
+                    <h1 className="f-tag">Investment History:</h1>
                   </div>
                   <div className="dropDown flex items-center justify-center flex-col relative">
                     <div className="category flex items-center">
@@ -772,8 +779,8 @@ useEffect(()=>{
                               className="unit-eng flex items-center font s14 b4"
                               placeholder="Plano"
                             >
-                                 {selectedAmount
-                                      ? selectedAmount[0]/10**18
+                                 {selectedAmount_forReward
+                                      ? selectedAmount_forReward[0]/10**18
                                       : "0"}                               
                                       
                                 </span>
@@ -789,13 +796,13 @@ useEffect(()=>{
                       className={`block flex aic abs ${hide6 ? "show" : ""}`}
                     >
                       <div className="manue flex aic col anim">
-                        {allInvestments.map((item, index) => (
+                        {All_investments_ForReward.map((item, index) => (
                           <div
                             key={index}
                             className="slt flex aic"
                             onClick={(e) => {
                               setHide6(!hide6);
-                              setSelectedAmount(item);
+                              setSelectedAmount_forReward(item);
                             }}
                           >
                             <div className="unit-name flex aic font s14 b4">
@@ -810,7 +817,7 @@ useEffect(()=>{
                   </div>
                   <div className="field-hdr flex items-center justify-end">
                     <h1 className="f-tag">
-                    Earning : <span className="c-theme">{(selectedAmount? Convert_To_eth(selectedAmount[6]):0)}</span>
+                    Earning : <span className="c-theme">{(selectedAmount_forReward? Convert_To_eth(selectedAmount_forReward[6]):0)}</span>
                     </h1>
                   </div>
                 </div>
